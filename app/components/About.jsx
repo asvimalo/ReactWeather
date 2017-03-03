@@ -7,11 +7,11 @@ var React = require('react');
 //     );
 //   }
 // });
-//Refactor with stateless components 
+//Refactor with stateless components
 var About =  (props) => {
   return (
     <h3>About Component</h3>
   )
-}
+};
 
 module.exports = About;
