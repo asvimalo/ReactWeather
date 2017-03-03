@@ -25,11 +25,6 @@ var Weather = React.createClass({
       that.setState({isLoading: false});
       alert(errorMessage);
     })
-    //alert(location);
-    // this.setState({
-    //   location: location,
-    //   temp: 25
-    // });
   },
   render: function () {
     var isLoading = this.state.isLoading;
