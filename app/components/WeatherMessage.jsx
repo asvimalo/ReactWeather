@@ -17,7 +17,7 @@ var WeatherMessage = (props) => {
   var temp = props.temp;
 
   return (
-    <h2>The temperature is {temp} in {location} </h2>
+    <h3 className="text-center">The temperature is {temp} in {location} </h3>
   )
 }
 module.exports = WeatherMessage;
