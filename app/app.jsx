@@ -5,7 +5,12 @@ var {Route,Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('./components/Main');
 var Weather = require('./components/Weather');
 var About = require('./components/About');
-var Examples = require('./components/Examples')
+var Examples = require('./components/Examples');
+
+// Load foundation
+require('style!css!foundation-sites/dist/css/foundation.min.css');
+//$(document).foundation();
+$(document).foundation();
 
 ReactDOM.render(
   <Router history={hashHistory}>

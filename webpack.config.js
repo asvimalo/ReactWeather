@@ -1,17 +1,34 @@
+'use strict';
+
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './app/app.jsx',
+  entry: [
+    'script!jquery/dist/jquery.min.js',
+    'script!foundation-sites/dist/js/foundation.min.js',
+    './app/app.jsx'
+  ],
+  externals: {
+    jquery: 'jQuery'
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
+  ],
   output: {
     path: __dirname,
     filename: './public/bundle.js'
   },
   resolve: {
-    // root: [__dirname],
+    root: __dirname,
     // alias: {
     //   Greeter: 'public/components/Greeter.jsx',
     //   GreeterMessage: 'public/components/GreeterMessage.jsx',
     //   GreeterForm: 'public/components/GreeterFrom.jsx'
     // },
-    extensions: [" ",'.js','.jsx']
+    extensions: ['','.js','.jsx']
 
   },
   module: {
@@ -22,6 +39,10 @@ module.exports = {
           presets: ['react','es2015','stage-0']
         },
         test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/
+      }, {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
         exclude: /(node_modules|bower_components)/
       }
     ]
